@@ -16,11 +16,10 @@ section{
 }
 
 .main-section{
-
   gap: 10px;
   flex-grow: 1;
   background-color: var(--gray-bq);
-
+  min-height: 100vh;
 }
 
 

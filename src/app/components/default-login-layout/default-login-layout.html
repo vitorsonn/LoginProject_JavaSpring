@@ -3,18 +3,18 @@
     <img src="logo.svg">
     <h2>{{title}}</h2>
     <ng-content></ng-content>
-    <button class="primary-btn">{{primaryBtnText}}</button>
+    <button (click)="submit()" class="primary-btn">{{primaryBtnText}}</button>
     <div class="divider">
       <div></div>
       <span>Or</span>
       <div></div>
     </div>
-    <button class="secondary-btn">{{secondaryBtnText}}</button>
+    <button (click)="navigate()" class="secondary-btn">{{secondaryBtnText}}</button>
 
   </section>
 
   <section class="main-section">
     <h1>You should, MoveIt!</h1>
-    <img src="Delivery.svg" alt="">
+    <img src="banner.svg" class="banner-img" alt="">
   </section>
 </main>
