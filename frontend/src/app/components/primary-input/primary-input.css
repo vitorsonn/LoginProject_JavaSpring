@@ -1,0 +1,36 @@
+.input-wrapper {
+  color: var(--text-color);
+  font-size: 14px;
+  text-align: start;
+
+
+  label{
+    margin-bottom: 10px;
+  }
+  .input-content {
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+
+    .icon {
+      padding: 12px;
+      background-color: var(--primary-color);
+      border-radius: 0 8px 8px 0;
+    }
+  }
+
+  input {
+    border: none;
+    border-radius: 8px 0 0 8px;
+    background-color: var(--gray-secondary);
+    padding: 12px 0 12px 20px;
+    width: 100%;
+    outline: none;
+
+  }
+
+  img{
+    height: 20px;
+
+  }
+}

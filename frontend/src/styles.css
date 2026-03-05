@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root{
+--primary-color: #7001FD;
+--text-color: #555555;
+--secondary-color: #1e2772;
+--gray-bq: #EEEEEE;
+--gray-secondary: #f1f3f6;
+}
+
+
+
+body{
+  font-family: "Open Sans", sans-serif;
+}
