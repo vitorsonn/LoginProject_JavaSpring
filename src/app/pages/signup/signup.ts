@@ -5,13 +5,12 @@ import { PrimaryInput } from '../../components/primary-input/primary-input';
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login-service';
 import { ToastrService } from 'ngx-toastr';
-
-interface loginForm{
+interface signupForm{
+  name: FormControl;
   email: FormControl;
   password: FormControl;
+  passwordConfirm: FormControl;
 }
-
-
 
 
 @Component({
@@ -20,11 +19,11 @@ interface loginForm{
   providers: [
     LoginService
   ],
-  templateUrl: './login.html',
-  styleUrl: './login.css',
+  templateUrl: './signup.html',
+  styleUrl: './signup.css',
 })
-export class Login {
-  loginForm: FormGroup<loginForm>;
+export class Signup {
+  signupForm: FormGroup<signupForm>;
 
   constructor(
     private router: Router,
@@ -32,24 +31,31 @@ export class Login {
     private toastr: ToastrService
   ) {
 
-    this.loginForm = new FormGroup({
+    this.signupForm = new FormGroup({
+      name: new FormControl('', {
+        validators: [Validators.required],
+      }),
+
       email: new FormControl('', {
         validators: [Validators.required, Validators.email],
       }),
       password: new FormControl('', {
         validators: [Validators.required, Validators.minLength(6)],
       }),
+       passwordConfirm: new FormControl('', {
+        validators: [Validators.required, Validators.minLength(6)],
+      }),
     });
   }
 
   submit(){
-    this.loginService.login(this.loginForm.value.email , this.loginForm.value.password).subscribe()
+    this.loginService.login(this.signupForm.value.email , this.signupForm.value.password).subscribe()
     next: () => this.toastr.success("Deu certo")
     error: () => this.toastr.error("Deu errado")
   }
 
 
   navigate(){
-    this.router.navigate(["/signup"])
+    this.router.navigate(["/login"])
   }
 }
